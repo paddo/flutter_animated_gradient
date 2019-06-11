@@ -6,7 +6,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^0.1.2
   flutter_hooks: ^0.5.0
 dev_dependencies:
   flutter_test:

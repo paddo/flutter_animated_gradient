@@ -1,4 +1,4 @@
-import 'package:animated_gradient/animated_gradient_layer.dart';
+import 'package:animated_gradient/animated_gradient_box.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -29,14 +29,8 @@ class MyApp extends StatelessWidget {
   ];
 
   final List<Gradient> _radialGradients = [
-    RadialGradient(
-        colors:[Colors.red, Colors.blue],
-        radius: 1.0,
-        center: Alignment.topCenter),
-    RadialGradient(
-        colors: [Colors.lightBlue, Colors.purple, Colors.pink],
-        radius: 2.0,
-        center: Alignment.bottomCenter),
+    RadialGradient(colors: [Colors.red, Colors.blue], radius: 1.0, center: Alignment.topCenter),
+    RadialGradient(colors: [Colors.lightBlue, Colors.purple, Colors.pink], radius: 2.0, center: Alignment.bottomCenter),
   ];
 
   @override
@@ -47,9 +41,12 @@ class MyApp extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Expanded(child: AnimatedGradientLayer(_linearGradients)),
-            Expanded(child: AnimatedGradientLayer(_sweepGradients)),
-            Expanded(child: AnimatedGradientLayer(_radialGradients, Curves.easeInOut)),
+            Expanded(child: AnimatedGradientBox(_linearGradients)),
+            Expanded(child: AnimatedGradientBox(_sweepGradients)),
+            Expanded(child: AnimatedGradientBox(_radialGradients, Curves.easeInOut)),
+            Expanded(
+                child: AnimatedGradientBox(
+                    []..addAll(_linearGradients)..addAll(_radialGradients)..addAll(_sweepGradients))),
           ],
         ),
       ),
