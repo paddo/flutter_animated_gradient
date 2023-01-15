@@ -6,7 +6,7 @@ class AnimatedGradientBox extends HookWidget {
   final List<Gradient> gradients;
   final Curve curve;
 
-  AnimatedGradientBox(this.gradients, [this.curve = Curves.linear]);
+  const AnimatedGradientBox(this.gradients, {this.curve = Curves.linear, super.key});
 
   @override
   Widget build(BuildContext context) {
