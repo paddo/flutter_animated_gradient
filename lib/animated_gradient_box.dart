@@ -10,6 +10,10 @@ class AnimatedGradientBox extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(decoration: BoxDecoration(gradient: useAnimatedGradient(gradients: gradients, curve: curve)));
+    return Container(
+      decoration: BoxDecoration(
+        gradient: useAnimatedGradient(gradients: gradients, curve: curve),
+      ),
+    );
   }
 }
